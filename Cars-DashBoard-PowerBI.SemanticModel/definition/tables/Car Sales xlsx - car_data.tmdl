@@ -1,0 +1,157 @@
+table 'Car Sales xlsx - car_data'
+	lineageTag: bfa89869-7b44-47a2-b987-bfff17569b62
+
+	column Car_id
+		dataType: string
+		lineageTag: 2740ce37-2b76-4bd3-ace1-786c40f6e693
+		summarizeBy: none
+		sourceColumn: Car_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 541d6bc7-a5fd-4263-acd0-68bfce97a5ba
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 6b5d6d25-0f3d-461c-9817-fa28210c9b55
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 5fd3e214-a625-4b60-8255-1fa5c63913e9
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Annual Income'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cdec397-58ff-4d7d-b278-89c1ff8d2000
+		summarizeBy: sum
+		sourceColumn: Annual Income
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dealer_Name
+		dataType: string
+		lineageTag: 303ca3d1-00b9-4b44-ac0f-01f33124b0e2
+		summarizeBy: none
+		sourceColumn: Dealer_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: d2139aa7-999a-465a-a382-5fad261d9876
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 36d03383-752a-4f70-aaa4-1c6d347f3715
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Engine
+		dataType: string
+		lineageTag: f201d401-0c78-4644-ad33-d889276feb3e
+		summarizeBy: none
+		sourceColumn: Engine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transmission
+		dataType: string
+		lineageTag: ff4b6ea9-f89f-4286-87dc-4dfea18bd002
+		summarizeBy: none
+		sourceColumn: Transmission
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 65eda841-d846-4ea8-832e-448a7466e208
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price ($)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 599ab74c-2aef-4fef-9d80-e74ab0864d18
+		summarizeBy: sum
+		sourceColumn: Price ($)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dealer_No
+		dataType: string
+		lineageTag: 09a4c7e4-5d00-4182-9b25-bf00d696e6a9
+		summarizeBy: none
+		sourceColumn: Dealer_No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Body Style'
+		dataType: string
+		lineageTag: 243f3f07-9f66-4c9e-a620-514bf4e42eed
+		summarizeBy: none
+		sourceColumn: Body Style
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: int64
+		formatString: 0
+		lineageTag: 937fa974-4710-4663-a4a2-a7342faea1a1
+		summarizeBy: sum
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dealer_Region
+		dataType: string
+		lineageTag: 1538052b-f82e-49d0-9e03-877fbe1db3cd
+		summarizeBy: none
+		sourceColumn: Dealer_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year = YEAR('Car Sales xlsx - car_data'[Date])
+		formatString: 0
+		lineageTag: 6f00335e-b4b2-4c6d-b1a7-6461f333c286
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Car Sales xlsx - car_data' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://docs.google.com/spreadsheets/d/e/2PACX-1vSAAKwSzL_ZPCq_Dic31lFkJka-5SEDPtZSxsom6XaI7ch8zNjNacBkn9wsWvt1rPBVRtmui22pFFSg/pub?output=xlsx"), null, true),
+				    #"Car Sales.xlsx - car_data_Sheet" = Source{[Item="Car Sales.xlsx - car_data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Car Sales.xlsx - car_data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Car_id", type text}, {"Date", type date}, {"Customer Name", type text}, {"Gender", type text}, {"Annual Income", Int64.Type}, {"Dealer_Name", type text}, {"Company", type text}, {"Model", type any}, {"Engine", type text}, {"Transmission", type text}, {"Color", type text}, {"Price ($)", Int64.Type}, {"Dealer_No", type text}, {"Body Style", type text}, {"Phone", Int64.Type}, {"Dealer_Region", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

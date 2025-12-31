@@ -1,0 +1,36 @@
+expression 'Errors in Popular_Spotify_Songs' =
+		let
+		Source = Popular_Spotify_Songs,
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"track_name", "artist(s)_name", "artist_count", "released_year", "released_month", "released_day", "in_spotify_playlists", "in_spotify_charts", "streams", "in_apple_playlists", "in_apple_charts", "in_deezer_playlists", "in_deezer_charts", "in_shazam_charts", "bpm", "key", "mode", "danceability_%", "valence_%", "energy_%", "acousticness_%", "instrumentalness_%", "liveness_%", "speechiness_%"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "track_name", "artist(s)_name", "artist_count", "released_year", "released_month", "released_day", "in_spotify_playlists", "in_spotify_charts", "streams", "in_apple_playlists", "in_apple_charts", "in_deezer_playlists", "in_deezer_charts", "in_shazam_charts", "bpm", "key", "mode", "danceability_%", "valence_%", "energy_%", "acousticness_%", "instrumentalness_%", "liveness_%", "speechiness_%"}),
+		    streams = #"Reordered Columns"{0}[streams]
+		in
+		  streams
+	lineageTag: ad10d304-185d-46b2-b0a4-48e517ede1f8
+	queryGroup: 'Query Errors - 12/30/2025 1:42:56 PM'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression Popular_Spotify_Songs =
+		let
+		    Source = Excel.Workbook(Web.Contents("https://docs.google.com/spreadsheets/d/e/2PACX-1vQbU5hJY071G4F_dAnN4y5DVmBKkWMldmlawLEKiVApbn1s9pcFNOYGCtsNgplHLRgh0WJCkSnAWwN3/pub?output=xlsx"), null, true),
+		    Popular_Spotify_Songs_Sheet = Source{[Item="Popular_Spotify_Songs",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Popular_Spotify_Songs_Sheet, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"track_name", type any}, {"artist(s)_name", type text}, {"artist_count", Int64.Type}, {"released_year", Int64.Type}, {"released_month", Int64.Type}, {"released_day", Int64.Type}, {"in_spotify_playlists", Int64.Type}, {"in_spotify_charts", Int64.Type}, {"streams", Int64.Type}, {"in_apple_playlists", Int64.Type}, {"in_apple_charts", Int64.Type}, {"in_deezer_playlists", Int64.Type}, {"in_deezer_charts", Int64.Type}, {"in_shazam_charts", Int64.Type}, {"bpm", Int64.Type}, {"key", type text}, {"mode", type text}, {"danceability_%", Int64.Type}, {"valence_%", Int64.Type}, {"energy_%", Int64.Type}, {"acousticness_%", Int64.Type}, {"instrumentalness_%", Int64.Type}, {"liveness_%", Int64.Type}, {"speechiness_%", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: 5a3f69de-39f3-4c0a-abff-51c08f037aa9
+
+	annotation PBI_ResultType = Table
+

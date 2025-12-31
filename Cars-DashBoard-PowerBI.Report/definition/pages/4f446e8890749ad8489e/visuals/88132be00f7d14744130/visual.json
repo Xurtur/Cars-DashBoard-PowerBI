@@ -1,0 +1,124 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "88132be00f7d14744130",
+  "position": {
+    "x": 656,
+    "y": 352,
+    "z": 2000,
+    "height": 352,
+    "width": 608,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "map",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Car Sales xlsx - car_data"
+                    }
+                  },
+                  "Property": "Dealer_Region"
+                }
+              },
+              "queryRef": "Car Sales xlsx - car_data.Dealer_Region",
+              "nativeQueryRef": "Dealer_Region",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Car Sales xlsx - car_data"
+                    }
+                  },
+                  "Property": "Dealer_Region"
+                }
+              },
+              "queryRef": "Car Sales xlsx - car_data.Dealer_Region",
+              "nativeQueryRef": "Dealer_Region"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Car Sales xlsx - car_data"
+                        }
+                      },
+                      "Property": "Dealer_Region"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Car Sales xlsx - car_data.Dealer_Region)",
+              "nativeQueryRef": "Count of Dealer_Region"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "bubbles": [
+        {
+          "properties": {
+            "markerRangeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dataRange'"
+                }
+              }
+            },
+            "bubbleSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sales Per Region'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
