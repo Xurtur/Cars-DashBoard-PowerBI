@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Car Sales xlsx - car_data.Dealer_Region",
-              "nativeQueryRef": "Dealer_Region",
-              "active": true
+              "nativeQueryRef": "Regions",
+              "active": true,
+              "displayName": "Regions"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Car Sales xlsx - car_data.Dealer_Region",
-              "nativeQueryRef": "Dealer_Region"
+              "nativeQueryRef": "Regions",
+              "displayName": "Regions"
             }
           ]
         },
@@ -120,5 +122,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4df544f8b54eb4dc5b91",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Car Sales xlsx - car_data"
+              }
+            },
+            "Property": "Dealer_Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad8ae364c22d4fea6845",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Car Sales xlsx - car_data"
+                  }
+                },
+                "Property": "Dealer_Region"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

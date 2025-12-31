@@ -1527,6 +1527,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "Regions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1559,39 +1569,6 @@ cultureInfo en-US
 			    }
 			  },
 			  "Relationships": {
-			    "car_sales_xlsx__car_data_has_dealer_region": {
-			      "Binding": {
-			        "ConceptualEntity": "Car Sales xlsx - car_data"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "car_sales_xlsx__car_data": {
-			          "Target": {
-			            "Entity": "car_sales_xlsx__car_data"
-			          }
-			        },
-			        "car_sales_xlsx__car_data.dealer_region": {
-			          "Target": {
-			            "Entity": "car_sales_xlsx__car_data.dealer_region"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "car_sales_xlsx__car_data"
-			            },
-			            "Object": {
-			              "Role": "car_sales_xlsx__car_data.dealer_region"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "car_sales_xlsx__car_datas_have_dealer_regions"
-			        }
-			      ]
-			    },
 			    "car_sales_xlsx__car_data_has_phone": {
 			      "Binding": {
 			        "ConceptualEntity": "Car Sales xlsx - car_data"
@@ -1946,6 +1923,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "car_sales_xlsx__car_datas_have_dealer_names"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "car_sales_xlsx__car_data.dealer_name"
+			            },
+			            "Verbs": [
+			              {
+			                "deal": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "car_sales_xlsx__car_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "dealer_names_deal_car_sales_xlsx__car_datas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "car_sales_xlsx__car_data.dealer_name"
+			            },
+			            "Object": {
+			              "Role": "car_sales_xlsx__car_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dealer_names_have_car_sales_xlsx__car_datas"
 			        }
 			      ]
 			    },
@@ -2156,6 +2166,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "car_sales_xlsx__car_datas_are_in_dealer_regions"
+			        }
+			      ]
+			    },
+			    "car_sales_xlsx__car_data_has_dealer_region": {
+			      "Binding": {
+			        "ConceptualEntity": "Car Sales xlsx - car_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "car_sales_xlsx__car_data": {
+			          "Target": {
+			            "Entity": "car_sales_xlsx__car_data"
+			          }
+			        },
+			        "car_sales_xlsx__car_data.dealer_region": {
+			          "Target": {
+			            "Entity": "car_sales_xlsx__car_data.dealer_region"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "car_sales_xlsx__car_data"
+			            },
+			            "Object": {
+			              "Role": "car_sales_xlsx__car_data.dealer_region"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "car_sales_xlsx__car_datas_have_dealer_regions"
 			        }
 			      ]
 			    },
