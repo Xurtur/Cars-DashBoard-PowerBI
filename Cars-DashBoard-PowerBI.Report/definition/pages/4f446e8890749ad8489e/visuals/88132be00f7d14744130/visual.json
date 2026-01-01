@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "88132be00f7d14744130",
   "position": {
-    "x": 656,
+    "x": 648,
     "y": 352,
-    "z": 2000,
-    "height": 352,
-    "width": 608,
-    "tabOrder": 2000
+    "z": 1000,
+    "height": 264,
+    "width": 616,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "map",
@@ -122,42 +122,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4df544f8b54eb4dc5b91",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Car Sales xlsx - car_data"
-              }
-            },
-            "Property": "Dealer_Region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ad8ae364c22d4fea6845",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Dealer_Region"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

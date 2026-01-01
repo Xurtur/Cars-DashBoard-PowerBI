@@ -1423,12 +1423,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "region": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "dealer location": {
 			            "Type": "Noun",
 			            "State": "Suggested",

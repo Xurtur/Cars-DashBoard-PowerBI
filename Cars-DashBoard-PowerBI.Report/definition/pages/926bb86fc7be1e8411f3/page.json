@@ -5,35 +5,34 @@
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "295c88b08616c0fc0316",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Car Sales xlsx - car_data"
+              }
+            },
+            "Property": "Company"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  },
   "visualInteractions": [
     {
-      "source": "ef4ac401dde4048f8562",
-      "target": "1328a90f9bc9c46a91f8",
-      "type": "DataFilter"
-    },
-    {
-      "source": "ef4ac401dde4048f8562",
-      "target": "e2a6c59306ec3361110a",
-      "type": "DataFilter"
-    },
-    {
-      "source": "1328a90f9bc9c46a91f8",
-      "target": "ef4ac401dde4048f8562",
-      "type": "DataFilter"
-    },
-    {
-      "source": "1328a90f9bc9c46a91f8",
+      "source": "81d1dceacb89dbdfc6cb",
       "target": "e2a6c59306ec3361110a",
       "type": "DataFilter"
     },
     {
       "source": "e2a6c59306ec3361110a",
-      "target": "1328a90f9bc9c46a91f8",
-      "type": "DataFilter"
-    },
-    {
-      "source": "e2a6c59306ec3361110a",
-      "target": "ef4ac401dde4048f8562",
+      "target": "81d1dceacb89dbdfc6cb",
       "type": "DataFilter"
     }
   ]

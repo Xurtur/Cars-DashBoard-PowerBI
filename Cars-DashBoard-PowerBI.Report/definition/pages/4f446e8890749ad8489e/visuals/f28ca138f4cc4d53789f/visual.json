@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "f28ca138f4cc4d53789f",
+  "position": {
+    "x": 328,
+    "y": 624,
+    "z": 7001,
+    "height": 80,
+    "width": 312,
+    "tabOrder": 7001
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Car Sales xlsx - car_data"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Car Sales xlsx - car_data.Customer Name)",
+              "nativeQueryRef": "Cars Sold",
+              "displayName": "Cars Sold"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Car Sales xlsx - car_data"
+                      }
+                    },
+                    "Property": "Customer Name"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a3d7401e3892bd017662",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Car Sales xlsx - car_data"
+                  }
+                },
+                "Property": "Customer Name"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

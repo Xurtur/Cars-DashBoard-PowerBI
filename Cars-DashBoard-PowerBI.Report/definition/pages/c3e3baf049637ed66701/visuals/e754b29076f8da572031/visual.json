@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "ddf208e9bc96fde38f8e",
+  "name": "e754b29076f8da572031",
   "position": {
-    "x": 16,
-    "y": 352,
-    "z": 1000,
+    "x": 944,
+    "y": 344,
+    "z": 3003,
     "height": 256,
-    "width": 624,
-    "tabOrder": 1000
+    "width": 328,
+    "tabOrder": 3002
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "pieChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,11 @@
                       "Entity": "Car Sales xlsx - car_data"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "Gender"
                 }
               },
-              "queryRef": "Car Sales xlsx - car_data.Year",
-              "nativeQueryRef": "Sum of Year",
+              "queryRef": "Car Sales xlsx - car_data.Gender",
+              "nativeQueryRef": "Gender",
               "active": true
             }
           ]
@@ -44,14 +44,15 @@
                           "Entity": "Car Sales xlsx - car_data"
                         }
                       },
-                      "Property": "Customer Name"
+                      "Property": "Gender"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(Car Sales xlsx - car_data.Customer Name)",
-              "nativeQueryRef": "Count of Customer Name"
+              "queryRef": "CountNonNull(Car Sales xlsx - car_data.Gender)",
+              "nativeQueryRef": "Gender ",
+              "displayName": "Gender "
             }
           ]
         }
@@ -68,7 +69,7 @@
                         "Entity": "Car Sales xlsx - car_data"
                       }
                     },
-                    "Property": "Customer Name"
+                    "Property": "Gender"
                   }
                 },
                 "Function": 5
@@ -80,55 +81,6 @@
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Scalar'"
-                }
-              }
-            },
-            "invertAxis": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "visualContainerObjects": {
       "title": [
         {
@@ -136,7 +88,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales Per Year'"
+                  "Value": "'Customer Gender'"
                 }
               }
             },
@@ -156,21 +108,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f43dc03466176fc7a33d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Car Sales xlsx - car_data"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3ee1ed5826036ef84b19",
+        "name": "f373d05d23a0d11d0523",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -180,13 +118,27 @@
                     "Entity": "Car Sales xlsx - car_data"
                   }
                 },
-                "Property": "Customer Name"
+                "Property": "Gender"
               }
             },
             "Function": 5
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "f7b819413cc83a7ec855",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Car Sales xlsx - car_data"
+              }
+            },
+            "Property": "Gender"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "ef4ac401dde4048f8562",
+  "name": "94924bcf9840fc41b657",
   "position": {
-    "x": 640,
-    "y": 424.70347648261759,
-    "z": 1000,
-    "height": 280.7361963190184,
-    "width": 612.51533742331287,
-    "tabOrder": 1000
+    "x": 8,
+    "y": 344,
+    "z": 3000,
+    "height": 256,
+    "width": 584,
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "funnel",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,11 @@
                       "Entity": "Car Sales xlsx - car_data"
                     }
                   },
-                  "Property": "Transmission"
+                  "Property": "Color"
                 }
               },
-              "queryRef": "Car Sales xlsx - car_data.Transmission",
-              "nativeQueryRef": "Transmission",
+              "queryRef": "Car Sales xlsx - car_data.Color",
+              "nativeQueryRef": "Count of Color",
               "active": true
             }
           ]
@@ -44,14 +44,14 @@
                           "Entity": "Car Sales xlsx - car_data"
                         }
                       },
-                      "Property": "Transmission"
+                      "Property": "Color"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(Car Sales xlsx - car_data.Transmission)",
-              "nativeQueryRef": "Count of Transmission"
+              "queryRef": "CountNonNull(Car Sales xlsx - car_data.Color)",
+              "nativeQueryRef": "Count of Color1"
             }
           ]
         }
@@ -68,7 +68,7 @@
                         "Entity": "Car Sales xlsx - car_data"
                       }
                     },
-                    "Property": "Transmission"
+                    "Property": "Color"
                   }
                 },
                 "Function": 5
@@ -87,7 +87,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Car Transmission Type Sold'"
+                  "Value": "'Preferred Color'"
                 }
               }
             },
@@ -103,5 +103,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "378c1cd4c8ba45a6d0bb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Car Sales xlsx - car_data"
+              }
+            },
+            "Property": "Color"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9130cbf8fdc5d293192c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Car Sales xlsx - car_data"
+                  }
+                },
+                "Property": "Color"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
