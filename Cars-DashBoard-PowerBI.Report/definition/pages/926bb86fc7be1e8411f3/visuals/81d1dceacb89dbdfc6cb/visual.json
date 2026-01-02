@@ -6,7 +6,7 @@
     "y": 448,
     "z": 3000,
     "height": 264,
-    "width": 1240,
+    "width": 1248,
     "tabOrder": 4000
   },
   "visual": {
@@ -225,6 +225,13 @@
                   "Value": "18D"
                 }
               }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -334,25 +341,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "25338cc6ac87b1a4e050",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Customer Name"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

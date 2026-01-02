@@ -49,7 +49,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Chrysler'"
+                          "Value": "'Chevrolet'"
                         }
                       }
                     ]
@@ -70,8 +70,6 @@
       {
         "name": "ab3965e1d303bab48f63",
         "boundFilter": "74fa3ebe5bd27ef80599",
-        "asAggregation": false,
-        "qnaSingleSelectRequired": false,
         "fieldExpr": {
           "Column": {
             "Expression": {

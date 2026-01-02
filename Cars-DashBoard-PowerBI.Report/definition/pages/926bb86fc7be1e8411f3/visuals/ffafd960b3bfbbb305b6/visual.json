@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ffafd960b3bfbbb305b6",
   "position": {
-    "x": 455.13292433537833,
-    "y": 15.705521472392638,
-    "z": 2000,
-    "height": 51.697341513292436,
-    "width": 369.73415132924339,
+    "x": 455.99999999999994,
+    "y": 40,
+    "z": 1000,
+    "height": 48,
+    "width": 368,
     "tabOrder": 2000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "CAR ANALYSIS DASHBOARD",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "18pt"
                     }
                   }
                 ],

@@ -3,7 +3,7 @@
   "name": "dc3c266404c83d2fbbd6",
   "position": {
     "x": 8,
-    "y": 40,
+    "y": 96,
     "z": 2000,
     "height": 296,
     "width": 1264,
@@ -117,6 +117,13 @@
                   "Value": "'center'"
                 }
               }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -226,39 +233,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "97e94bdaffb07697508a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Car Sales xlsx - car_data"
-              }
-            },
-            "Property": "Body Style"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "617f796a36a320d5cc2d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Model"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

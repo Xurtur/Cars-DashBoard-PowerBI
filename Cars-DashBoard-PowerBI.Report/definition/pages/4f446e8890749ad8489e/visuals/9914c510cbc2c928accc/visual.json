@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "9914c510cbc2c928accc",
   "position": {
-    "x": 951.99999999999989,
-    "y": 624,
+    "x": 831.99999999999989,
+    "y": 8,
     "z": 7000,
     "height": 80,
-    "width": 312,
+    "width": 415.99999999999994,
     "tabOrder": 7000
   },
   "visual": {
@@ -62,29 +62,21 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e0d986c8fd54c172ac77",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Price ($)"
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
-            },
-            "Function": 1
+            }
           }
-        },
-        "type": "Advanced"
-      }
-    ]
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
   }
 }

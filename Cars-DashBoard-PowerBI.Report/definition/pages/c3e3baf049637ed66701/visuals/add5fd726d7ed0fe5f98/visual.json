@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "57bf053212e6eef8ca2b",
+  "name": "add5fd726d7ed0fe5f98",
   "position": {
-    "x": 576,
-    "y": 640,
-    "z": 2000,
-    "height": 72,
-    "width": 296,
-    "tabOrder": 2000
+    "x": 560,
+    "y": 632,
+    "z": 8000,
+    "height": 80,
+    "width": 328,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,12 +23,13 @@
                       "Entity": "Car Sales xlsx - car_data"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "Dealer_Name"
                 }
               },
-              "queryRef": "Car Sales xlsx - car_data.Year",
-              "nativeQueryRef": "Year",
-              "active": true
+              "queryRef": "Car Sales xlsx - car_data.Dealer_Name",
+              "nativeQueryRef": "Dealer",
+              "active": true,
+              "displayName": "Dealer"
             }
           ]
         }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "e6161cc3b1a16d03f0bd",
   "position": {
-    "x": 648,
-    "y": 624,
+    "x": 415.99999999999994,
+    "y": 8,
     "z": 6000,
     "height": 80,
-    "width": 296,
+    "width": 400,
     "tabOrder": 6000
   },
   "visual": {
@@ -72,34 +72,18 @@
                   "Value": "0D"
                 }
               }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b8746707944854e0bbcd",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Annual Income"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,37 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "e2a6c59306ec3361110a",
+  "name": "c624117dfc1500011469",
   "position": {
-    "x": 16,
-    "y": 112,
-    "z": 2000,
-    "height": 328,
-    "width": 1248,
-    "tabOrder": 1000
+    "x": 831.99999999999989,
+    "y": 24,
+    "z": 7000,
+    "height": 80,
+    "width": 216,
+    "tabOrder": 7000
   },
   "visual": {
-    "visualType": "treemap",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Group": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Car Sales xlsx - car_data"
-                    }
-                  },
-                  "Property": "Company"
-                }
-              },
-              "queryRef": "Car Sales xlsx - car_data.Company",
-              "nativeQueryRef": "Company",
-              "active": true
-            }
-          ]
-        },
         "Values": {
           "projections": [
             {
@@ -44,84 +25,28 @@
                           "Entity": "Car Sales xlsx - car_data"
                         }
                       },
-                      "Property": "Customer Name"
+                      "Property": "Dealer_Name"
                     }
                   },
-                  "Function": 5
+                  "Function": 3
                 }
               },
-              "queryRef": "CountNonNull(Car Sales xlsx - car_data.Customer Name)",
-              "nativeQueryRef": "Count of Customer Name"
+              "queryRef": "Min(Car Sales xlsx - car_data.Dealer_Name)",
+              "nativeQueryRef": "Top Dealer",
+              "displayName": "Top Dealer"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Car Sales xlsx - car_data"
-                      }
-                    },
-                    "Property": "Customer Name"
-                  }
-                },
-                "Function": 5
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
+    "objects": {
+      "labels": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Top Car Companies By Sold Units'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
+                  "Value": "12D"
                 }
               }
             }
@@ -134,7 +59,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "be105a3bbf3e47ec4908",
+        "name": "70dfe77e4dfcaa729d1a",
         "field": {
           "Column": {
             "Expression": {
@@ -142,7 +67,7 @@
                 "Entity": "Car Sales xlsx - car_data"
               }
             },
-            "Property": "Company"
+            "Property": "Dealer_Name"
           }
         },
         "type": "TopN",
@@ -170,7 +95,7 @@
                               "Source": "c"
                             }
                           },
-                          "Property": "Company"
+                          "Property": "Dealer_Name"
                         },
                         "Name": "field"
                       }
@@ -187,7 +112,7 @@
                                     "Source": "c"
                                   }
                                 },
-                                "Property": "Customer Name"
+                                "Property": "Dealer_Name"
                               }
                             },
                             "Function": 5
@@ -195,7 +120,7 @@
                         }
                       }
                     ],
-                    "Top": 10
+                    "Top": 1
                   }
                 }
               },
@@ -219,7 +144,7 @@
                             "Source": "c"
                           }
                         },
-                        "Property": "Company"
+                        "Property": "Dealer_Name"
                       }
                     }
                   ],
@@ -232,26 +157,8 @@
               }
             }
           ]
-        }
-      },
-      {
-        "name": "f073d71baebf0f9bd178",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Customer Name"
-              }
-            },
-            "Function": 5
-          }
         },
-        "type": "Advanced"
+        "howCreated": "User"
       }
     ]
   }

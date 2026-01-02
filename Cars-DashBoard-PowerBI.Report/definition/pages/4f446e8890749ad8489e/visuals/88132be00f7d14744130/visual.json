@@ -3,10 +3,10 @@
   "name": "88132be00f7d14744130",
   "position": {
     "x": 648,
-    "y": 352,
+    "y": 368,
     "z": 1000,
     "height": 264,
-    "width": 616,
+    "width": 624,
     "tabOrder": 1000
   },
   "visual": {
@@ -114,6 +114,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

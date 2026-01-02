@@ -678,6 +678,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.589
 			          }
+			        },
+			        {
+			          "Brand": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1433,16 +1443,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "location": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.818
-			          }
-			        },
-			        {
 			          "dealer province": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1450,16 +1450,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "province": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -1513,17 +1503,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "area": {
-			            "Type": "Noun",
+			          "Regions": {
 			            "State": "Suggested",
 			            "Source": {
-			              "Agent": "Thesaurus"
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.9
 			          }
 			        },
 			        {
-			          "Regions": {
+			          "Region": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

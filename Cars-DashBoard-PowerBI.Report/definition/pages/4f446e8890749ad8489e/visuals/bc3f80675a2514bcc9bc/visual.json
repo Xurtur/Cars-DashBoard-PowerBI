@@ -3,7 +3,7 @@
   "name": "bc3f80675a2514bcc9bc",
   "position": {
     "x": 16,
-    "y": 352,
+    "y": 368,
     "z": 5000,
     "height": 264,
     "width": 624,
@@ -13,6 +13,24 @@
     "visualType": "scatterChart",
     "query": {
       "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Car Sales xlsx - car_data"
+                    }
+                  },
+                  "Property": "Company"
+                }
+              },
+              "queryRef": "Car Sales xlsx - car_data.Company",
+              "nativeQueryRef": "Company"
+            }
+          ]
+        },
         "X": {
           "projections": [
             {
@@ -115,6 +133,26 @@
             }
           }
         }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -125,6 +163,27 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customer Annual Income to Price Bought($)'"
                 }
               }
             }

@@ -3,10 +3,10 @@
   "name": "9f58a28e20da37bf86ca",
   "position": {
     "x": 608,
-    "y": 344,
+    "y": 400,
     "z": 1000,
-    "height": 256,
-    "width": 328,
+    "height": 224,
+    "width": 320,
     "tabOrder": 1000
   },
   "visual": {
@@ -97,48 +97,18 @@
                   "Value": "'center'"
                 }
               }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cf41a4596e2e01875c5b",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Transmission"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "670847cb234a804e9598",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Car Sales xlsx - car_data"
-              }
-            },
-            "Property": "Transmission"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

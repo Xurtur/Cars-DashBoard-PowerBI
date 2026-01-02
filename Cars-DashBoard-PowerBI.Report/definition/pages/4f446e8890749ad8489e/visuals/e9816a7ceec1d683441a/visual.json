@@ -3,9 +3,9 @@
   "name": "e9816a7ceec1d683441a",
   "position": {
     "x": 16,
-    "y": 48,
+    "y": 96,
     "z": 4000,
-    "height": 296,
+    "height": 264,
     "width": 1248,
     "tabOrder": 4000
   },
@@ -29,6 +29,24 @@
               "queryRef": "Car Sales xlsx - car_data.Model",
               "nativeQueryRef": "Model",
               "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Car Sales xlsx - car_data"
+                    }
+                  },
+                  "Property": "Company"
+                }
+              },
+              "queryRef": "Car Sales xlsx - car_data.Company",
+              "nativeQueryRef": "Company"
             }
           ]
         },
@@ -225,6 +243,20 @@
                   "Value": "'center'"
                 }
               }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
             }
           }
         }
@@ -365,25 +397,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "c0c05dee7df76cec7614",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Car Sales xlsx - car_data"
-                  }
-                },
-                "Property": "Customer Name"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
